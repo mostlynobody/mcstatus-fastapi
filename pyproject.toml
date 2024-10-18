@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "mcstatus-fastapi"
+version = "0.1.0"
+description = "REST server for MC status checks"
+authors = ["mostlynobody <tycho@mostlynobody.com>"]
+license = "MIT License"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.scripts]
+start = "app.main:start"
+dev = "app.main:start_dev"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mcstatus = "^11.1.1"
+fastapi = {extras = ["standard"], version = "^0.115.2"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

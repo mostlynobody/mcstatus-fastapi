@@ -1,0 +1,1 @@
+﻿# mcstatus-fastapi
