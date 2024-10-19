@@ -8,9 +8,9 @@ Just deploy it next to your Minecraft server. I run it alongside [itzg/minecraft
 
 `podman run -d --pod minecraft --name mcstatus ghcr.io/mostlynobody/mcstatus-fastapi:latest`
 
-To see if you can reach the FastAPI container, you can simply get `/` and check for 204.
+To see if you can reach the FastAPI container, you can simply GET `/`.
 
-Then you can call the endpoint `/status` to check your Minecraft server.
+Then you can GET `/status` to check your Minecraft server.
 
 ## Configuration
 
