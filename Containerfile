@@ -36,7 +36,7 @@ ENV PROJECT_VERSION=${PROJECT_VERSION:-dev}
 
 ENV PROJECT_NAME=mcstatus-fastapi
 
-LABEL maintainer="mostlynobody <tycho@mostlynobody.com>>"
+LABEL maintainer="mostlynobody <tycho@mostlynobody.com>"
 LABEL name="mcstatus-fastapi"
 LABEL description="This is a Container for mcstatus-fastapi."
 LABEL version=${PROJECT_VERSION}

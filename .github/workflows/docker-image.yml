@@ -22,5 +22,4 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --file Containerfile --tag ghcr.io/mostlynobody/mcstatus-fastapi:latest --tag ghcr.io/mostlynobody/mcstatus-fastapi:${{ github.ref_name }} --build-arg BUILD_VERSION=${{ github.ref_name }}
-        docker push ghcr.io/mostlynobody/mcstatus-fastapi:latest
-      
+        docker push ghcr.io/mostlynobody/mcstatus-fastapi

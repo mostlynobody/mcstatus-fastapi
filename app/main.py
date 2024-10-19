@@ -11,7 +11,9 @@ mc_server = init_mc_server(settings)
 
 @app.get('/')
 def healthiness():
-    return responses.Response(status_code=status.HTTP_204_NO_CONTENT)
+    return responses.JSONResponse(status_code=status.HTTP_200_OK,
+                                  content={'status': 'ok', 'server': settings.project_name,
+                                           'version': settings.project_version})
 
 
 @app.get('/status')
