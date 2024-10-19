@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - '*'
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'checkout repository'
+      uses:  actions/checkout@v4
+
+    - name: 'Login to GitHub Container Registry'
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GHCR_TOKEN }}
+
+    - name: Build the Docker image
+      run: |
+        docker build . --file Containerfile --tag ghcr.io/mostlynobody/mcstatus-fastapi:latest --tag ghcr.io/mostlynobody/mcstatus-fastapi:${{ github.ref_name }} --build-arg BUILD_VERSION=${{ github.ref_name }}
+        docker push ghcr.io/mostlynobody/mcstatus-fastapi:latest
+      
